@@ -11,9 +11,10 @@ describe('verifies account names', () => {
     assert.strictEqual(isValidAccountName([]), false)
   })
 
-  it('must be 12 chars of length', () => {
+  it('must be <= 12 chars of length', () => {
     assert.strictEqual(isValidAccountName('testfaucet11'), true)
-    assert.strictEqual(isValidAccountName('testfaucet1'), false)
+    assert.strictEqual(isValidAccountName('test.io'), true)
+
     assert.strictEqual(isValidAccountName('testfaucet111'), false)
   })
 
