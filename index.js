@@ -3,9 +3,6 @@
 module.exports = isValidAccountName
 
 function isValidAccountName (name) {
-  if (typeof name !== 'string') return false
-  if (name.length > 12) return false
-  if (!/[a-z]/.test(name[0])) return false
-
-  return !/[^abcdefghijklmnopqrstuvwxyz12345.]/.test(name)
+  return typeof name === 'string' 
+      && /(^[a-z1-5.]{1,11}[a-z1-5]$)|(^[a-z1-5.]{12}[a-j1-5]$)/.test(name);
 }
